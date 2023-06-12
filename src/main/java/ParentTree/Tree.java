@@ -1,8 +1,9 @@
 package ParentTree;
+import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 
-public class Tree {
+public class Tree{
 
     private ArrayList<Node> tree = new ArrayList<>();
 

@@ -1,4 +1,5 @@
 package ParentTree;
+import java.io.Serializable;
 import java.util.*;
 
 public class Main {
@@ -23,18 +24,27 @@ public class Main {
         tree.appendPerentChild(person6, person7);
         tree.appendVifeHusbent(person1, person2);
 
+        String file = "D:/JAVA/Seminars_OOP/OOP_2/src/main/java/ParentTree/tree.txt";
+        Writable writable = new FileHandler();
+
         // Дети Ивана Иванова
         System.out.println("Дети " + person1.toString());
         System.out.println(new Search(tree).spend(person1, Rule.parent));
+        writable.write(new Search(tree).spend(person1, Rule.parent), file);
+
         // Дети Марии Ивановой
         System.out.println("Дети " + person2.toString());
         System.out.println(new Search(tree).spend(person2, Rule.parent));
+        writable.write(new Search(tree).spend(person2, Rule.parent), file);
 
         // Жена Ивана Иванова
         System.out.println("Жена " + person1);
         System.out.println(new Search(tree).spend(person1, Rule.wife));
+        writable.write(new Search(tree).spend(person1, Rule.wife), file);
 
         // Поиск по возрасту
-        System.out.println(new Search(tree).searchAge());
+        //System.out.println(new Search(tree).searchAge());
+
+
     }
 }
